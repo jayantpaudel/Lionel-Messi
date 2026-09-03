@@ -16,6 +16,7 @@ a:focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
 .nav { align-items: center; border-bottom: 1px solid #639bb5; display: flex; height: 92px; justify-content: space-between; padding: 0 clamp(24px, 6vw, 92px); position: relative; z-index: 3; }
 .brand { color: var(--ink); font: 900 28px/1 "DM Sans", sans-serif; letter-spacing: -2px; text-decoration: none; }
 .brand span { color: var(--coral); font: 800 15px/1 "DM Mono", monospace; letter-spacing: -2px; vertical-align: top; }
+.nav-links { display: flex; gap: clamp(16px, 2vw, 31px); margin-left: 50px; }
 .nav-links { display: flex; gap: 31px; margin-left: 80px; }
 .nav-links a, .menu { color: var(--ink); font: 500 11px "DM Mono", monospace; letter-spacing: .05em; text-decoration: none; text-transform: uppercase; }
 .nav-links a { padding: 8px 0; }
@@ -74,6 +75,9 @@ h1 em, h2 i { color: var(--coral); font-weight: 700; }
 .archive-heading h2 { font: 900 clamp(60px, 7.2vw, 108px)/.79 "Playfair Display", serif; letter-spacing: -.065em; margin: 24px 0 0; }
 .archive-heading i { color: var(--cream); }
 .archive-heading > p { font-size: 15px; line-height: 1.65; max-width: 325px; margin-bottom: 8px; }
+.boot-display { height: 160px; margin: -20px 0 -26px auto; position: relative; width: min(430px, 46vw); z-index: 1; }
+.boot-display svg { bottom: 0; filter: drop-shadow(0 13px 10px rgba(92, 60, 12, .2)); position: absolute; transform: rotate(-8deg); width: 100%; }
+.boot-lace { border-left: 2px dashed rgba(6, 19, 59, .5); height: 112px; left: 53%; position: absolute; top: -60px; }
 .archive-grid { display: grid; gap: 1px; grid-template-columns: repeat(3, 1fr); margin-top: 75px; background: rgba(6, 19, 59, .38); }
 .archive-grid article { background: #d6aa50; min-height: 205px; padding: 25px; transition: background .25s ease, transform .25s ease; }
 .archive-grid article:hover { background: #e4bd6c; transform: translateY(-5px); }
@@ -86,6 +90,48 @@ h1 em, h2 i { color: var(--coral); font-weight: 700; }
 .archive-feature h3 { font-size: clamp(30px, 3.4vw, 52px); margin: 0 0 10px; }
 .archive-feature small { display: block; margin-top: 22px; }
 .archive-note { border-top: 1px solid rgba(6, 19, 59, .45); margin: 1px 0 0; padding-top: 18px; }
+
+.club-career { background: #e8e0d1; padding: 130px clamp(24px, 10vw, 155px); }
+.club-heading { display: grid; grid-template-columns: 1fr .7fr; gap: 8vw; }
+.club-heading .section-label { grid-column: 1 / -1; }
+.club-heading h2 { font: 900 clamp(60px, 7.2vw, 108px)/.79 "Playfair Display", serif; letter-spacing: -.065em; margin: 0; }
+.club-heading > p { align-self: end; font-size: 15px; line-height: 1.65; margin: 0 0 8px; max-width: 330px; }
+.club-shelf { border-top: 1px solid #a69b88; display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 75px; }
+.club-shelf article { border-right: 1px solid #a69b88; min-height: 305px; padding: 24px; position: relative; }
+.club-shelf article:first-child { padding-left: 0; }
+.club-shelf article:last-child { border-right: 0; }
+.club-shelf span { color: #53617b; display: block; font: 500 10px "DM Mono", monospace; letter-spacing: .08em; }
+.club-shelf b { color: var(--coral); display: block; font: 900 72px/.8 "Playfair Display", serif; letter-spacing: -.08em; margin: 42px 0 25px; }
+.club-shelf h3 { font: 700 clamp(22px, 2.15vw, 31px)/.98 "Playfair Display", serif; letter-spacing: -.04em; margin: 0 0 10px; }
+.club-shelf p { color: #425071; font-size: 13px; line-height: 1.55; margin: 0; }
+.club-shelf .barca { background: var(--ink); color: var(--cream); margin-top: -13px; padding-top: 37px; }
+.club-shelf .barca span, .club-shelf .barca p { color: #c5d0e6; }
+.club-shelf .barca b { color: var(--gold); }
+
+.gallery { background: #f4efe4; padding: 130px clamp(24px, 10vw, 155px); }
+.gallery-heading { align-items: end; display: grid; gap: 8vw; grid-template-columns: 1fr .7fr; }
+.gallery-heading h2 { font: 900 clamp(60px, 7.2vw, 108px)/.79 "Playfair Display", serif; letter-spacing: -.065em; margin: 22px 0 0; }
+.gallery-heading > p { font-size: 15px; line-height: 1.65; margin: 0 0 8px; max-width: 340px; }
+.gallery-instructions { align-items: center; border-bottom: 1px solid #bdb5a5; border-top: 1px solid #bdb5a5; display: grid; gap: 14px 18px; grid-template-columns: auto 1fr auto 1fr; margin-top: 65px; padding: 18px 0; }
+.gallery-instructions span { color: var(--coral); font: 700 16px "Playfair Display", serif; }
+.gallery-instructions p, .gallery-note { color: #53617b; font: 400 10px "DM Mono", monospace; letter-spacing: .04em; margin: 0; }
+.gallery-instructions code, .gallery-note code { background: #e3d7c3; color: var(--ink); font-family: inherit; padding: 2px 4px; }
+.photo-wall { display: grid; gap: 14px; grid-auto-flow: dense; grid-template-columns: repeat(4, 1fr); margin-top: 28px; }
+.gallery-slot { aspect-ratio: 1 / 1.05; background: #d5c7b0; margin: 0; min-width: 0; overflow: hidden; position: relative; }
+.gallery-slot img { height: 100%; object-fit: cover; width: 100%; }
+.gallery-slot figcaption { background: rgba(6, 19, 59, .8); bottom: 0; color: var(--cream); font: 500 10px "DM Mono", monospace; left: 0; letter-spacing: .06em; padding: 9px 11px; position: absolute; text-transform: uppercase; }
+.photo-placeholder { background: var(--ink); color: var(--cream); display: flex; flex-direction: column; justify-content: space-between; padding: 18px; }
+.gallery-slot .photo-placeholder { height: 100%; width: 100%; }
+.gallery-slot:nth-child(2) .photo-placeholder { background: #a7cddd; color: var(--ink); }
+.gallery-slot:nth-child(3) .photo-placeholder { background: #d6aa50; color: var(--ink); }
+.photo-placeholder span { color: var(--gold); font: 900 50px/.8 "Playfair Display", serif; letter-spacing: -.08em; }
+.gallery-slot:nth-child(2) .photo-placeholder span, .gallery-slot:nth-child(3) .photo-placeholder span { color: var(--coral); }
+.photo-placeholder p { font: 700 22px/1 "Playfair Display", serif; letter-spacing: -.04em; margin: 0; max-width: 145px; }
+.gallery-slot.photo-tall { aspect-ratio: .72 / 1.3; grid-row: span 2; }
+.gallery-slot.photo-wide { aspect-ratio: auto; grid-column: span 2; }
+.gallery-slot.photo-quote .photo-placeholder { background: var(--coral); }
+.gallery-slot.photo-quote .photo-placeholder span { color: var(--cream); }
+.gallery-note { line-height: 1.7; margin-top: 22px; }
 
 .timeline { background: var(--cream); display: grid; gap: 9vw; grid-template-columns: minmax(220px, .78fr) minmax(400px, 1.22fr); padding: 130px clamp(24px, 10vw, 155px); }
 .timeline-intro { align-self: start; position: sticky; top: 42px; }
@@ -138,6 +184,27 @@ footer .sources a { color: var(--cream); text-underline-offset: 3px; }
   .timeline { display: block; }
   .archive-heading { display: block; }
   .archive-heading > p { margin-top: 28px; }
+  .boot-display { height: 120px; margin: 14px 0 -12px auto; width: 83vw; }
+  .boot-lace { height: 65px; top: -24px; }
+  .archive-grid { grid-template-columns: 1fr; margin-top: 48px; }
+  .archive-feature { grid-column: auto; min-height: 360px !important; }
+  .archive-grid article { min-height: 185px; }
+  .club-career { padding: 80px 24px; }
+  .club-heading { display: block; }
+  .club-heading h2 { margin: 22px 0 28px; }
+  .club-shelf { grid-template-columns: 1fr 1fr; margin-top: 50px; }
+  .club-shelf article { border-bottom: 1px solid #a69b88; min-height: 250px; padding: 20px; }
+  .club-shelf article:first-child { padding-left: 0; }
+  .club-shelf article:nth-child(2) { border-right: 0; }
+  .club-shelf article:nth-child(3) { padding-left: 0; }
+  .club-shelf .barca { margin-top: -8px; padding-top: 28px; }
+  .gallery { padding: 80px 24px; }
+  .gallery-heading { display: block; }
+  .gallery-heading > p { margin-top: 28px; }
+  .gallery-instructions { grid-template-columns: auto 1fr; margin-top: 45px; }
+  .photo-wall { grid-template-columns: repeat(2, 1fr); }
+  .gallery-slot.photo-tall { aspect-ratio: .8 / 1.25; }
+  .gallery-slot.photo-wide { aspect-ratio: 1.4 / 1; grid-column: span 2; }
   .archive-grid { grid-template-columns: 1fr; margin-top: 48px; }
   .archive-feature { grid-column: auto; min-height: 360px !important; }
   .archive-grid article { min-height: 185px; }
