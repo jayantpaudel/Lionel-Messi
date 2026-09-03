@@ -17,6 +17,7 @@ a:focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
 .brand { color: var(--ink); font: 900 28px/1 "DM Sans", sans-serif; letter-spacing: -2px; text-decoration: none; }
 .brand span { color: var(--coral); font: 800 15px/1 "DM Mono", monospace; letter-spacing: -2px; vertical-align: top; }
 .nav-links { display: flex; gap: clamp(16px, 2vw, 31px); margin-left: 50px; }
+.nav-links { display: flex; gap: 31px; margin-left: 80px; }
 .nav-links a, .menu { color: var(--ink); font: 500 11px "DM Mono", monospace; letter-spacing: .05em; text-decoration: none; text-transform: uppercase; }
 .nav-links a { padding: 8px 0; }
 .nav-links a:hover, .nav-links a:focus-visible { color: var(--coral); }
@@ -204,6 +205,9 @@ footer .sources a { color: var(--cream); text-underline-offset: 3px; }
   .photo-wall { grid-template-columns: repeat(2, 1fr); }
   .gallery-slot.photo-tall { aspect-ratio: .8 / 1.25; }
   .gallery-slot.photo-wide { aspect-ratio: 1.4 / 1; grid-column: span 2; }
+  .archive-grid { grid-template-columns: 1fr; margin-top: 48px; }
+  .archive-feature { grid-column: auto; min-height: 360px !important; }
+  .archive-grid article { min-height: 185px; }
   .timeline-intro { position: static; }
   .timeline-list { margin-top: 48px; }
   .timeline-list li { gap: 12px; grid-template-columns: 62px 1fr; }
