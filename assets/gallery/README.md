@@ -14,6 +14,10 @@ Keep the `gallery-slot`, `photo-tall`, `photo-wide`, or `photo-quote` classes to
 ```
 
 Keep the `gallery-slot`, `photo-tall`, `photo-wide`, or `photo-quote` classes to preserve the mosaic. Timeline, hero, and Argentina brackets can be replaced with the same `<img>` markup.
+</figure>
+```
+
+Keep the `gallery-slot`, `photo-tall`, `photo-wide`, or `photo-quote` classes to preserve the mosaic. Timeline, hero, and Argentina brackets can be replaced with the same `<img>` markup.
 This page uses external image links, so no image files need to be saved in this folder. To change a picture, replace only the URL inside that image’s `src` attribute in `index.html`. For example:
 
 ```html
