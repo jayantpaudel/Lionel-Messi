@@ -1,0 +1,139 @@
+/*
+  Isolated visual finishing layer.
+  Kept separate from style.css so this enhancement stays low-conflict when
+  the page structure or base styles are edited on another branch.
+*/
+
+:root {
+  --surface-line: rgba(7, 22, 61, 0.14);
+}
+
+.section-label {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.section-label::before {
+  background: currentColor;
+  content: "";
+  display: block;
+  height: 1px;
+  opacity: 0.55;
+  width: 24px;
+}
+
+.story-grid,
+.section-head,
+.timeline {
+  position: relative;
+}
+
+.stats article,
+.club-shelf article,
+.archive-grid article {
+  transition:
+    box-shadow 0.28s ease,
+    transform 0.28s ease;
+}
+
+.stats article:hover,
+.club-shelf article:hover,
+.archive-grid article:hover {
+  box-shadow: inset 0 3px 0 var(--gold);
+}
+
+.timeline-list li {
+  border-left: 0 solid var(--coral);
+  transition:
+    background 0.25s ease,
+    border-left-width 0.25s ease,
+    padding-left 0.25s ease;
+}
+
+.timeline-list li:hover {
+  border-left-width: 3px;
+}
+
+.timeline-frame {
+  box-shadow: 0 10px 20px rgba(7, 22, 61, 0.1);
+}
+
+.gallery-slot {
+  box-shadow: 0 10px 24px rgba(7, 22, 61, 0.08);
+}
+
+.gallery-slot:hover {
+  box-shadow: 0 18px 34px rgba(7, 22, 61, 0.18);
+}
+
+@media (max-width: 700px) {
+  .section-label::before {
+    width: 18px;
+  }
+
+  .timeline-list li:hover {
+    border-left-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stats article,
+  .club-shelf article,
+  .archive-grid article,
+  .timeline-list li {
+    transition: none;
+  }
+}
+
+/* Additional framed slots complete the club and signature-moment chapters. */
+.club-shelf article {
+  display: flex;
+  flex-direction: column;
+  min-height: 370px;
+}
+
+.club-frame {
+  margin-top: auto;
+  min-height: 74px;
+  padding: 12px;
+}
+
+.barca .club-frame {
+  background: linear-gradient(135deg, #1b315c, #651e37);
+}
+
+.memory-frames {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 42px;
+}
+
+.memory-frame {
+  aspect-ratio: 1.55 / 1;
+  min-height: 150px;
+}
+
+.moments .memory-frame:nth-child(2) {
+  background: linear-gradient(135deg, #a13a34, #e9895a);
+}
+
+.moments .memory-frame:nth-child(3) {
+  background: linear-gradient(135deg, #174f70, #91c4d5);
+}
+
+@media (max-width: 700px) {
+  .club-shelf article {
+    min-height: 305px;
+  }
+
+  .memory-frames {
+    grid-template-columns: 1fr;
+    margin-top: 28px;
+  }
+
+  .memory-frame {
+    min-height: 130px;
+  }
+}
