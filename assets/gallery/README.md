@@ -1,12 +1,12 @@
 # The picture library
 
-Place permanent gallery images in this folder, then replace the `<div class="photo-placeholder">…</div>` inside one of the gallery figures in `index.html` with an image element. For example:
+This page uses external image links, so no image files need to be saved in this folder. To change a picture, replace only the URL inside that image’s `src` attribute in `index.html`. For example:
 
 ```html
 <figure class="gallery-slot">
-  <img src="assets/gallery/world-cup-night.jpg" alt="Celebrating Argentina's World Cup win" />
+  <img src="https://example.com/your-image.jpg" alt="Describe your image" />
   <figcaption>World Cup night</figcaption>
 </figure>
 ```
 
-Keep the `gallery-slot`, `photo-tall`, `photo-wide`, or `photo-quote` classes on the figure to preserve the intentional mosaic layout. The four empty frames on the page are ready for direct code-based image replacement; no browser upload control is used.
+Keep the `gallery-slot`, `photo-tall`, `photo-wide`, or `photo-quote` classes on the figure to preserve the intentional mosaic layout. The hero and Argentina feature use the same approach: replace the external URL in their `src` attributes. Use direct image URLs supplied by an image host and always provide accurate `alt` text for your replacement image.
