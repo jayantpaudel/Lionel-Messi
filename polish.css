@@ -1,0 +1,242 @@
+/*
+  Isolated visual finishing layer.
+  Kept separate from style.css so this enhancement stays low-conflict when
+  the page structure or base styles are edited on another branch.
+*/
+
+:root {
+  --surface-line: rgba(7, 22, 61, 0.14);
+}
+
+.section-label {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.section-label::before {
+  background: currentColor;
+  content: "";
+  display: block;
+  height: 1px;
+  opacity: 0.55;
+  width: 24px;
+}
+
+.story-grid,
+.section-head,
+.timeline {
+  position: relative;
+}
+
+.stats article,
+.club-shelf article,
+.archive-grid article {
+  transition:
+    box-shadow 0.28s ease,
+    transform 0.28s ease;
+}
+
+.stats article:hover,
+.club-shelf article:hover,
+.archive-grid article:hover {
+  box-shadow: inset 0 3px 0 var(--gold);
+}
+
+.timeline-list li {
+  border-left: 0 solid var(--coral);
+  transition:
+    background 0.25s ease,
+    border-left-width 0.25s ease,
+    padding-left 0.25s ease;
+}
+
+.timeline-list li:hover {
+  border-left-width: 3px;
+}
+
+.timeline-frame {
+  box-shadow: 0 10px 20px rgba(7, 22, 61, 0.1);
+}
+
+.gallery-slot {
+  box-shadow: 0 10px 24px rgba(7, 22, 61, 0.08);
+}
+
+.gallery-slot:hover {
+  box-shadow: 0 18px 34px rgba(7, 22, 61, 0.18);
+}
+
+@media (max-width: 700px) {
+  .section-label::before {
+    width: 18px;
+  }
+
+  .timeline-list li:hover {
+    border-left-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stats article,
+  .club-shelf article,
+  .archive-grid article,
+  .timeline-list li {
+    transition: none;
+  }
+}
+
+/* Additional framed slots complete the club and signature-moment chapters. */
+.club-shelf article {
+  display: flex;
+  flex-direction: column;
+  min-height: 370px;
+}
+
+.club-frame {
+  margin-top: auto;
+  min-height: 74px;
+  padding: 12px;
+}
+
+.barca .club-frame {
+  background: linear-gradient(135deg, #1b315c, #651e37);
+}
+
+.memory-frames {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 42px;
+}
+
+.memory-frame {
+  aspect-ratio: 1.55 / 1;
+  min-height: 150px;
+}
+
+.moments .memory-frame:nth-child(2) {
+  background: linear-gradient(135deg, #a13a34, #e9895a);
+}
+
+.moments .memory-frame:nth-child(3) {
+  background: linear-gradient(135deg, #174f70, #91c4d5);
+}
+
+@media (max-width: 700px) {
+  .club-shelf article {
+    min-height: 305px;
+  }
+
+  .memory-frames {
+    grid-template-columns: 1fr;
+    margin-top: 28px;
+  }
+
+  .memory-frame {
+    min-height: 130px;
+  }
+}
+
+/* The archive opens directly into the story; navigation has been intentionally removed. */
+.hero-art {
+  inset: 0 0 0 39%;
+}
+
+.hero-copy {
+  top: 18%;
+}
+
+@media (max-width: 700px) {
+  .hero-art {
+    inset: 0 -100px 0 8%;
+  }
+}
+
+/* Hero finishing: stronger first impression without adding interface chrome. */
+.hero::after {
+  background: linear-gradient(
+    90deg,
+    rgba(167, 211, 230, 0.98) 0%,
+    rgba(167, 211, 230, 0) 58%
+  );
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.hero-copy,
+.hero-footer {
+  z-index: 2;
+}
+
+.hero-footer {
+  border-top: 1px solid rgba(7, 22, 61, 0.22);
+  padding-top: 14px;
+}
+
+.hero-player.image-placeholder {
+  box-shadow: -18px 22px 0 rgba(7, 22, 61, 0.1);
+}
+
+.round-link {
+  width: max-content;
+}
+
+.round-link::after {
+  background: var(--coral);
+  content: "";
+  height: 1px;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+  width: 122px;
+}
+
+.round-link:hover::after,
+.round-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 700px) {
+  .hero::after {
+    background: linear-gradient(
+      180deg,
+      rgba(167, 211, 230, 0.9) 0%,
+      rgba(167, 211, 230, 0.1) 58%
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .round-link::after {
+    transition: none;
+  }
+}
+
+.round-link {
+  position: relative;
+}
+
+/* Final interaction corrections. */
+.round-link::after {
+  bottom: -5px;
+  left: 0;
+  pointer-events: none;
+}
+
+.image-placeholder::before {
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-player.image-placeholder,
+.feature-image.image-placeholder,
+.club-frame.image-placeholder,
+.memory-frame.image-placeholder,
+.timeline-frame.image-placeholder {
+  contain: paint;
+}
