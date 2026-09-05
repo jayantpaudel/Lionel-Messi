@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" role="img" aria-labelledby="title desc">
+  <title id="title">A stylised football number ten</title>
+  <desc id="desc">A navy and gold editorial illustration of a footballer wearing number ten.</desc>
+  <defs>
+    <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2c467"/>
+      <stop offset=".55" stop-color="#c78935"/>
+      <stop offset="1" stop-color="#8f571f"/>
+    </linearGradient>
+    <linearGradient id="shorts" x1="0" y1="0" x2=".8" y2="1">
+      <stop stop-color="#18477f"/><stop offset="1" stop-color="#07163d"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#020716" flood-opacity=".35"/>
+    </filter>
+  </defs>
+  <path d="M64 734c70-78 128-116 215-116 92 0 164 39 253 118v164H64z" fill="#061331" opacity=".45"/>
+  <g fill="none" stroke="#f6f0e3" stroke-opacity=".32" stroke-width="2"><circle cx="303" cy="405" r="307"/><circle cx="303" cy="405" r="245"/></g>
+  <g filter="url(#shadow)">
+    <path d="M203 195c0-53 39-93 96-93 55 0 95 40 95 93 0 50-38 88-95 88-58 0-96-38-96-88z" fill="#c5834c"/>
+    <path d="M216 143c24-60 115-74 162-12l-9 36c-36-17-80-16-121 2z" fill="#101e42"/>
+    <path d="M178 290c35-31 78-46 122-46 50 0 94 16 132 48l53 239H116z" fill="url(#shirt)"/>
+    <path d="M181 304 81 450l33 32 113-108zM418 302l105 146-34 35-112-111z" fill="#c5834c"/>
+    <path d="M118 511h367l-19 129H143z" fill="url(#shorts)"/>
+    <path d="m163 630 105 7-22 174H132zM351 638l104-9 39 182H379z" fill="#c5834c"/>
+    <path d="M127 796h128v36H113zM374 798h127l16 34H372z" fill="#f6f0e3"/>
+    <text x="299" y="491" fill="#07163d" font-family="Georgia, serif" font-size="178" font-weight="900" text-anchor="middle">10</text>
+  </g>
+  <path d="M47 837h506" stroke="#f6f0e3" stroke-opacity=".55" stroke-width="2"/>
+</svg>
